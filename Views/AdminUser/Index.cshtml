@@ -1,0 +1,63 @@
+@model IEnumerable<ApplicationUser>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Пользователи";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Пользователи</h4>
+        <p class="mb-0 text-secondary-custom" style="font-size:.875rem;">@Model.Count() аккаунтов</p>
+    </div>
+</div>
+
+<div class="card-dark overflow-hidden">
+    <div class="table-responsive">
+        <table class="table-dark-custom table align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Телефон</th>
+                    <th>Зарегистрирован</th>
+                    <th>Статус</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr style="@(user.IsBlocked ? "background:rgba(239,68,68,.05);" : "")">
+                        <td style="color:var(--text-primary);font-weight:600;">@user.FullName</td>
+                        <td style="color:var(--text-secondary);font-size:.875rem;">@user.Email</td>
+                        <td style="color:var(--text-secondary);font-size:.875rem;">@(user.Phone ?? "—")</td>
+                        <td style="color:var(--text-secondary);font-size:.82rem;">@user.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy")</td>
+                        <td>
+                            @if (user.IsBlocked)
+                            {
+                                <span class="px-2 py-1 rounded-pill" style="background:rgba(239,68,68,.12);color:#fca5a5;font-size:.75rem;font-weight:600;">Заблокирован</span>
+                            }
+                            else
+                            {
+                                <span class="px-2 py-1 rounded-pill" style="background:rgba(34,197,94,.12);color:#86efac;font-size:.75rem;font-weight:600;">Активен</span>
+                            }
+                        </td>
+                        <td>
+                            <form asp-action="Block" asp-route-id="@user.Id" method="post"
+                                  onsubmit="return confirm('@(user.IsBlocked ? "Разблокировать" : "Заблокировать") пользователя?')">
+                                @Html.AntiForgeryToken()
+                                <button type="submit"
+                                        style="@(user.IsBlocked ? "background:rgba(34,197,94,.1);color:#86efac;border:1px solid rgba(34,197,94,.3);" : "background:rgba(239,68,68,.1);color:#fca5a5;border:1px solid rgba(239,68,68,.3);")"
+                                        class="border-0 rounded px-3 py-1 fw-600"
+                                        style2="font-size:.8rem;cursor:pointer;border-radius:6px;transition:all .2s;">
+                                    @(user.IsBlocked ? "Разблокировать" : "Заблокировать")
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

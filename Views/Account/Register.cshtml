@@ -1,0 +1,62 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-5 col-lg-4">
+        <div class="text-center mb-4">
+            <div style="width:56px;height:56px;background:var(--accent);border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;">⚡</div>
+            <h4 class="fw-800" style="color:var(--text-primary)">Создать аккаунт</h4>
+            <p class="text-secondary-custom" style="font-size:.875rem;">Присоединяйтесь к EL-Rent</p>
+        </div>
+
+        <div class="card-dark p-4">
+            <form asp-action="Register" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert-dark-danger p-3 rounded-custom mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label-dark">Полное имя</label>
+                    <input asp-for="FullName" class="form-control-dark w-100" placeholder="Иван Иванов" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label-dark">Email</label>
+                    <input asp-for="Email" class="form-control-dark w-100"
+                           placeholder="mail@example.com" autocomplete="email" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label-dark">Телефон</label>
+                    <input asp-for="Phone" class="form-control-dark w-100" placeholder="+373 XX XXX XXX" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label-dark">Пароль</label>
+                    <input asp-for="Password" class="form-control-dark w-100" autocomplete="new-password" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="ConfirmPassword" class="form-label-dark">Подтверждение пароля</label>
+                    <input asp-for="ConfirmPassword" class="form-control-dark w-100" autocomplete="new-password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                </div>
+
+                <button type="submit" class="btn-accent btn w-100 py-2 fw-600">Зарегистрироваться</button>
+            </form>
+        </div>
+
+        <p class="mt-4 text-center text-secondary-custom" style="font-size:.875rem;">
+            Уже есть аккаунт?
+            <a asp-controller="Account" asp-action="Login" class="fw-600">Войти</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+

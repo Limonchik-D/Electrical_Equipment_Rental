@@ -1,0 +1,938 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\home\\map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\home\\map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\electrical_equipment_rental.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:electrical_equipment_rental.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\productunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\productunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\devicelocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\devicelocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\rental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\rental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\repair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\repair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\viewmodels\\rentalcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:viewmodels\\rentalcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\admin\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\admin\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\admin\\adminproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\admin\\adminproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\admin\\adminrentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\admin\\adminrentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\admin\\adminrepaircontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\admin\\adminrepaircontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\admin\\adminlocationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\admin\\adminlocationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\catalog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\catalog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\catalog\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\catalog\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\rental\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\rental\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\rental\\myrentals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\rental\\myrentals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminproduct\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminproduct\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminproduct\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminproduct\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminproduct\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminproduct\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminproduct\\units.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminproduct\\units.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminrental\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminrental\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminrental\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminrental\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminrepair\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminrepair\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminrepair\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminrepair\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminlocation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminlocation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminlocation\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminlocation\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminlocation\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminlocation\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\views\\adminuser\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:views\\adminuser\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|c:\\\u043A\u043E\u0434\\vs\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\electrical_equipment_rental\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{89924EE6-FDA7-413B-829A-8EA0B482AB48}|Electrical_Equipment_Rental.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAALICAAAAAAAAAABBwL8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-20T16:12:52.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminDashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminDashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAIBJwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:34:40.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "MyRentals.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Rental\\MyRentals.cshtml",
+              "RelativeDocumentMoniker": "Views\\Rental\\MyRentals.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Rental\\MyRentals.cshtml",
+              "RelativeToolTip": "Views\\Rental\\MyRentals.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:34:20.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Rental\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Rental\\Create.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Rental\\Create.cshtml",
+              "RelativeToolTip": "Views\\Rental\\Create.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:34:01.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Catalog\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Catalog\\Details.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Catalog\\Details.cshtml",
+              "RelativeToolTip": "Views\\Catalog\\Details.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:33:46.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Catalog\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Catalog\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Catalog\\Index.cshtml",
+              "RelativeToolTip": "Views\\Catalog\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAIBJwGkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:33:32.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAIBJwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:33:15.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAIBJwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:33:04.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "Data\\DbInitializer.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "Data\\DbInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:11:54.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminProduct\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminProduct\\Index.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAIBJwEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:34:51.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminUser\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminUser\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminUser\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminUser\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:37:27.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminLocation\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminLocation\\Edit.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminLocation\\Edit.cshtml",
+              "RelativeToolTip": "Views\\AdminLocation\\Edit.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:37:17.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminLocation\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminLocation\\Create.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminLocation\\Create.cshtml",
+              "RelativeToolTip": "Views\\AdminLocation\\Create.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:37:04.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminLocation\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminLocation\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminLocation\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminLocation\\Index.cshtml",
+              "ViewState": "AgIAAGUAAAAAAAAAAIBJwI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:36:50.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRepair\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminRepair\\Create.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRepair\\Create.cshtml",
+              "RelativeToolTip": "Views\\AdminRepair\\Create.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:36:34.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRepair\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminRepair\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRepair\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminRepair\\Index.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAIBJwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:36:22.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRental\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminRental\\Details.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRental\\Details.cshtml",
+              "RelativeToolTip": "Views\\AdminRental\\Details.cshtml",
+              "ViewState": "AgIAAF0AAAAAAAAAAIBJwJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:36:07.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRental\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminRental\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminRental\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminRental\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:35:45.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Units.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Units.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminProduct\\Units.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Units.cshtml",
+              "RelativeToolTip": "Views\\AdminProduct\\Units.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAIBJwG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:35:31.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminProduct\\Edit.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Edit.cshtml",
+              "RelativeToolTip": "Views\\AdminProduct\\Edit.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:35:15.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminProduct\\Create.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\AdminProduct\\Create.cshtml",
+              "RelativeToolTip": "Views\\AdminProduct\\Create.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:35:04.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T13:47:29.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:09:44.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\ProductImage.cs",
+              "RelativeDocumentMoniker": "Models\\ProductImage.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\ProductImage.cs",
+              "RelativeToolTip": "Models\\ProductImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:09:52.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductUnit.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\ProductUnit.cs",
+              "RelativeDocumentMoniker": "Models\\ProductUnit.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\ProductUnit.cs",
+              "RelativeToolTip": "Models\\ProductUnit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:09:58.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Location.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Location.cs",
+              "RelativeDocumentMoniker": "Models\\Location.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Location.cs",
+              "RelativeToolTip": "Models\\Location.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:10:23.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DeviceLocation.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\DeviceLocation.cs",
+              "RelativeDocumentMoniker": "Models\\DeviceLocation.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\DeviceLocation.cs",
+              "RelativeToolTip": "Models\\DeviceLocation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:10:33.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Rental.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Rental.cs",
+              "RelativeDocumentMoniker": "Models\\Rental.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Rental.cs",
+              "RelativeToolTip": "Models\\Rental.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:10:45.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:12:03.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAIBJwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:16:43.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBJwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:16:25.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T15:15:10.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AdminUserController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminUserController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminUserController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AdminUserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:15:01.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AdminLocationController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminLocationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminLocationController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminLocationController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AdminLocationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:14:53.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AdminRepairController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminRepairController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminRepairController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminRepairController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AdminRepairController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:14:42.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AdminRentalController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminRentalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminRentalController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminRentalController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AdminRentalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:14:32.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AdminProductController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminProductController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminProductController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AdminProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:14:14.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AdminDashboardController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin\\AdminDashboardController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\Admin\\AdminDashboardController.cs",
+              "RelativeToolTip": "Controllers\\Admin\\AdminDashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:14:00.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RentalController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\RentalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RentalController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\RentalController.cs",
+              "RelativeToolTip": "Controllers\\RentalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:13:49.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CatalogController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\CatalogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CatalogController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\CatalogController.cs",
+              "RelativeToolTip": "Controllers\\CatalogController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:13:31.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:13:21.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RentalCreateViewModel.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\ViewModels\\RentalCreateViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\RentalCreateViewModel.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\ViewModels\\RentalCreateViewModel.cs",
+              "RelativeToolTip": "ViewModels\\RentalCreateViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:12:17.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:12:10.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:09:39.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:09:34.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:11:33.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuditLog.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\AuditLog.cs",
+              "RelativeDocumentMoniker": "Models\\AuditLog.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\AuditLog.cs",
+              "RelativeToolTip": "Models\\AuditLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:11:17.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Repair.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Repair.cs",
+              "RelativeDocumentMoniker": "Models\\Repair.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Repair.cs",
+              "RelativeToolTip": "Models\\Repair.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:11:06.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T15:10:53.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Electrical_Equipment_Rental",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Electrical_Equipment_Rental.csproj",
+              "RelativeDocumentMoniker": "Electrical_Equipment_Rental.csproj",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Electrical_Equipment_Rental.csproj",
+              "RelativeToolTip": "Electrical_Equipment_Rental.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-20T13:50:55.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-20T13:50:59.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T14:11:22.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T14:11:28.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Map.cshtml",
+              "DocumentMoniker": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Home\\Map.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Map.cshtml",
+              "ToolTip": "C:\\\u041A\u043E\u0434\\vs\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Electrical_Equipment_Rental\\Views\\Home\\Map.cshtml",
+              "RelativeToolTip": "Views\\Home\\Map.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T14:11:42.15Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Repair>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Ремонты";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="mb-0">🔧 Ремонты</h4>
+    <a href="/admin/repairs/create" class="btn btn-primary btn-sm">
+        <i class="bi bi-plus-lg me-1"></i>Новый ремонт
+    </a>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Техника</th>
+                    <th>Причина</th>
+                    <th>Создан</th>
+                    <th>Статус</th>
+                    <th>Стоимость</th>
+                    <th>Изменить статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rep in Model)
+                {
+                    var badge = rep.Status switch
+                    {
+                        RepairStatus.Pending => "warning",
+                        RepairStatus.InProgress => "primary",
+                        RepairStatus.Done => "success",
+                        _ => "secondary"
+                    };
+                    <tr>
+                        <td class="text-muted small">@rep.Id</td>
+                        <td>
+                            @rep.ProductUnit?.Product?.Name<br />
+                            <small class="text-muted">@rep.ProductUnit?.SerialNumber</small>
+                        </td>
+                        <td>@rep.Reason</td>
+                        <td class="small">@rep.CreatedAt.ToLocalTime().ToString("dd.MM.yy")</td>
+                        <td><span class="badge bg-@badge">@rep.Status</span></td>
+                        <td>@(rep.Cost.HasValue ? rep.Cost + " ₽" : "—")</td>
+                        <td>
+                            <form asp-action="UpdateStatus" asp-route-id="@rep.Id" method="post" class="d-flex gap-1">
+                                <select name="status" class="form-select form-select-sm" style="width:120px">
+                                    @foreach (var s in Enum.GetValues<RepairStatus>())
+                                    {
+                                        <option value="@s" selected="@(rep.Status == s)">@s</option>
+                                    }
+                                </select>
+                                <input type="number" name="cost" step="0.01" class="form-control form-control-sm"
+                                       style="width:90px" placeholder="Цена" value="@rep.Cost" />
+                                <button type="submit" class="btn btn-sm btn-outline-primary">OK</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

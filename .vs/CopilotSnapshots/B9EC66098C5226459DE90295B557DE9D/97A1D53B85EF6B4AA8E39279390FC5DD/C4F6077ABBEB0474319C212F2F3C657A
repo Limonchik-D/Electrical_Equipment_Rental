@@ -1,0 +1,125 @@
+﻿@model Rental
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Аренда #" + Model.Id;
+    var locations = ViewBag.Locations as IEnumerable<Location> ?? Enumerable.Empty<Location>();
+}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <a href="/admin/rentals" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left"></i></a>
+    <h4 class="mb-0">Аренда #@Model.Id</h4>
+    @{
+        var badge = Model.Status switch
+        {
+            RentalStatus.Pending => "warning",
+            RentalStatus.Active => "success",
+            RentalStatus.Completed => "secondary",
+            _ => "danger"
+        };
+    }
+    <span class="badge bg-@badge fs-6">@Model.Status</span>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white fw-semibold">Детали аренды</div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-5 text-muted">Клиент</dt>
+                    <dd class="col-7">@Model.User?.FullName<br /><small class="text-muted">@Model.User?.Email</small></dd>
+
+                    <dt class="col-5 text-muted">Техника</dt>
+                    <dd class="col-7">@Model.ProductUnit?.Product?.Name<br /><small>S/N: @Model.ProductUnit?.SerialNumber</small></dd>
+
+                    <dt class="col-5 text-muted">Точка получения</dt>
+                    <dd class="col-7">@Model.StartLocation?.Name</dd>
+
+                    <dt class="col-5 text-muted">Оформлено</dt>
+                    <dd class="col-7">@Model.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</dd>
+
+                    @if (Model.StartedAt.HasValue)
+                    {
+                        <dt class="col-5 text-muted">Выдано</dt>
+                        <dd class="col-7">@Model.StartedAt.Value.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</dd>
+                    }
+
+                    <dt class="col-5 text-muted">Плановый возврат</dt>
+                    <dd class="col-7">@(Model.PlannedEndAt?.ToLocalTime().ToString("dd.MM.yyyy HH:mm") ?? "—")</dd>
+
+                    @if (Model.ActualEndAt.HasValue)
+                    {
+                        <dt class="col-5 text-muted">Фактический возврат</dt>
+                        <dd class="col-7">@Model.ActualEndAt.Value.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</dd>
+                    }
+
+                    <dt class="col-5 text-muted">Ставка</dt>
+                    <dd class="col-7">@Model.RatePerHour ₽/ч</dd>
+
+                    <dt class="col-5 text-muted">Залог</dt>
+                    <dd class="col-7">@Model.DepositAmount ₽</dd>
+
+                    @if (Model.TotalAmount.HasValue)
+                    {
+                        <dt class="col-5 text-muted">Итого</dt>
+                        <dd class="col-7 fw-bold">@Model.TotalAmount ₽</dd>
+                    }
+
+                    @if (Model.FineAmount.HasValue && Model.FineAmount > 0)
+                    {
+                        <dt class="col-5 text-muted">Штраф</dt>
+                        <dd class="col-7 text-danger fw-bold">@Model.FineAmount ₽</dd>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.Notes))
+                    {
+                        <dt class="col-5 text-muted">Примечание</dt>
+                        <dd class="col-7">@Model.Notes</dd>
+                    }
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm mb-3">
+            <div class="card-header bg-white fw-semibold">Действия</div>
+            <div class="card-body d-flex flex-column gap-2">
+                @if (Model.Status == RentalStatus.Pending)
+                {
+                    <form asp-action="Activate" asp-route-id="@Model.Id" method="post">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="bi bi-play-circle me-1"></i>Подтвердить и выдать технику
+                        </button>
+                    </form>
+                    <form asp-action="Cancel" asp-route-id="@Model.Id" method="post">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-outline-danger w-100"
+                                onclick="return confirm('Отменить аренду?')">Отменить</button>
+                    </form>
+                }
+
+                @if (Model.Status == RentalStatus.Active)
+                {
+                    <form asp-action="Complete" asp-route-id="@Model.Id" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-2">
+                            <label class="form-label small">Точка возврата</label>
+                            <select name="endLocationId" class="form-select form-select-sm">
+                                <option value="">— Выберите —</option>
+                                @foreach (var loc in locations)
+                                {
+                                    <option value="@loc.Id">@loc.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="bi bi-check-circle me-1"></i>Завершить и рассчитать
+                        </button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>

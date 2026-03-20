@@ -1,0 +1,80 @@
+@model Location
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Новая точка стоянки";
+}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <a href="/admin/locations"
+       style="background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text-secondary);border-radius:var(--radius-sm);padding:.35rem .7rem;text-decoration:none;font-size:.85rem;">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+    <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Добавить точку стоянки</h4>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-5">
+        <div class="card-dark p-4">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="mb-3 p-3 rounded"
+                     style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5;font-size:.875rem;"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label-dark">Название</label>
+                    <input asp-for="Name" class="form-control-dark w-100" placeholder="Центральная точка" />
+                    <span asp-validation-for="Name" style="color:#fca5a5;font-size:.8rem;"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Address" class="form-label-dark">Адрес</label>
+                    <input asp-for="Address" class="form-control-dark w-100" placeholder="ул. Примерная, 1" />
+                    <span asp-validation-for="Address" style="color:#fca5a5;font-size:.8rem;"></span>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col">
+                        <label asp-for="Latitude" class="form-label-dark">Широта</label>
+                        <input asp-for="Latitude" id="latInput" class="form-control-dark w-100" type="number" step="0.000001" />
+                        <span asp-validation-for="Latitude" style="color:#fca5a5;font-size:.8rem;"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Longitude" class="form-label-dark">Долгота</label>
+                        <input asp-for="Longitude" id="lngInput" class="form-control-dark w-100" type="number" step="0.000001" />
+                        <span asp-validation-for="Longitude" style="color:#fca5a5;font-size:.8rem;"></span>
+                    </div>
+                </div>
+
+                <div class="mb-4 d-flex align-items-center gap-2">
+                    <input asp-for="IsActive" class="form-check-input" style="background:var(--bg-elevated);border-color:var(--border);" checked />
+                    <label asp-for="IsActive" style="color:var(--text-secondary);font-size:.875rem;">Активна</label>
+                </div>
+
+                <p style="color:var(--text-secondary);font-size:.8rem;">
+                    <i class="bi bi-cursor me-1"></i>Кликните на карту справа для выбора координат
+                </p>
+                <button type="submit" class="btn-accent btn w-100">Сохранить точку</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div id="pickMap" style="height:420px;border-radius:var(--radius);border:1px solid var(--border);"></div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    var marker = null;
+    var map = L.map('pickMap').setView([47.7631, 29.6383], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
+
+    map.on('click', function(e) {
+        var lat = e.latlng.lat.toFixed(6);
+        var lng = e.latlng.lng.toFixed(6);
+        document.getElementById('latInput').value = lat;
+        document.getElementById('lngInput').value = lng;
+        if (marker) marker.remove();
+        marker = L.marker([lat, lng]).addTo(map).bindPopup('Выбранная точка').openPopup();
+    });
+</script>
+}

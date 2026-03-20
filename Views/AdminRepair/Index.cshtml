@@ -1,0 +1,77 @@
+@model IEnumerable<Repair>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Ремонты";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Ремонты</h4>
+        <p class="mb-0 text-secondary-custom" style="font-size:.875rem;">@Model.Count() заявок</p>
+    </div>
+    <a href="/admin/repairs/create" class="btn-accent btn px-4 d-flex align-items-center gap-2">
+        <i class="bi bi-plus-lg"></i>Новый ремонт
+    </a>
+</div>
+
+<div class="card-dark overflow-hidden">
+    <div class="table-responsive">
+        <table class="table-dark-custom table align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Техника</th>
+                    <th>Причина</th>
+                    <th>Создан</th>
+                    <th>Статус</th>
+                    <th>Стоимость</th>
+                    <th>Изменить статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rep in Model)
+                {
+                    var (badgeBg, badgeColor) = rep.Status switch
+                    {
+                        RepairStatus.Pending    => ("rgba(245,158,11,.12)",  "#fcd34d"),
+                        RepairStatus.InProgress => ("rgba(99,102,241,.12)", "#a5b4fc"),
+                        RepairStatus.Done       => ("rgba(34,197,94,.12)",   "#86efac"),
+                        _                       => ("rgba(148,163,184,.1)", "#94a3b8")
+                    };
+                    <tr>
+                        <td style="color:var(--text-secondary);font-size:.82rem;">@rep.Id</td>
+                        <td>
+                            <div style="color:var(--text-primary);font-weight:600;">@rep.ProductUnit?.Product?.Name</div>
+                            <div style="color:var(--text-secondary);font-size:.78rem;">@rep.ProductUnit?.SerialNumber</div>
+                        </td>
+                        <td style="color:var(--text-secondary);font-size:.875rem;">@rep.Reason</td>
+                        <td style="color:var(--text-secondary);font-size:.82rem;">@rep.CreatedAt.ToLocalTime().ToString("dd.MM.yy")</td>
+                        <td>
+                            <span class="px-2 py-1 rounded-pill"
+                                  style="background:@badgeBg;color:@badgeColor;font-size:.75rem;font-weight:600;">
+                                @rep.Status
+                            </span>
+                        </td>
+                        <td style="color:var(--text-primary);">@(rep.Cost.HasValue ? rep.Cost + " ₽" : "—")</td>
+                        <td>
+                            <form asp-action="UpdateStatus" asp-route-id="@rep.Id" method="post" class="d-flex gap-1">
+                                <select name="status" class="form-select-dark" style="width:120px">
+                                    @foreach (var s in Enum.GetValues<RepairStatus>())
+                                    {
+                                        <option value="@s" selected="@(rep.Status == s)">@s</option>
+                                    }
+                                </select>
+                                <input type="number" name="cost" step="0.01" class="form-control-dark"
+                                       style="width:90px" placeholder="Цена" value="@rep.Cost" />
+                                <button type="submit"
+                                        style="background:rgba(99,102,241,.12);color:var(--accent);border:1px solid rgba(99,102,241,.3);border-radius:6px;padding:.3rem .7rem;font-size:.8rem;font-weight:600;white-space:nowrap;cursor:pointer;">
+                                    OK
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

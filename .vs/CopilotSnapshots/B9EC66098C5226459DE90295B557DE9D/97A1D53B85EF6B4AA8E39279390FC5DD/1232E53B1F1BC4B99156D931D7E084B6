@@ -1,0 +1,120 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Дашборд";
+    var recentRentals = ViewBag.RecentRentals as IEnumerable<Rental> ?? Enumerable.Empty<Rental>();
+}
+
+<div class="d-flex align-items-center gap-2 mb-4">
+    <div style="width:3px;height:24px;background:var(--accent);border-radius:2px;"></div>
+    <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Дашборд</h4>
+</div>
+
+<!-- Stat cards -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="stat-card stat-blue">
+            <div class="stat-value" style="color:var(--accent);">@ViewBag.AvailableUnits</div>
+            <div class="stat-label">Свободная техника</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="stat-card stat-green">
+            <div class="stat-value" style="color:#22c55e;">@ViewBag.ActiveRentals</div>
+            <div class="stat-label">Активных аренд</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="stat-card stat-yellow">
+            <div class="stat-value" style="color:#f59e0b;">@ViewBag.PendingRentals</div>
+            <div class="stat-label">Ожидают выдачи</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="stat-card stat-red">
+            <div class="stat-value" style="color:#ef4444;">@ViewBag.ActiveRepairs</div>
+            <div class="stat-label">На ремонте</div>
+        </div>
+    </div>
+</div>
+
+<!-- Info row -->
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card-dark p-3 d-flex justify-content-between align-items-center">
+            <span class="text-secondary-custom">Всего товаров</span>
+            <strong style="color:var(--text-primary)">@ViewBag.ProductsCount</strong>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-dark p-3 d-flex justify-content-between align-items-center">
+            <span class="text-secondary-custom">Экземпляров техники</span>
+            <strong style="color:var(--text-primary)">@ViewBag.UnitsCount</strong>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-dark p-3 d-flex justify-content-between align-items-center">
+            <span class="text-secondary-custom">Пользователей</span>
+            <strong style="color:var(--text-primary)">@ViewBag.UsersCount</strong>
+        </div>
+    </div>
+</div>
+
+<!-- Recent rentals -->
+<div class="card-dark overflow-hidden">
+    <div class="p-3 d-flex justify-content-between align-items-center" style="border-bottom:1px solid var(--border);">
+        <span class="fw-700" style="color:var(--text-primary);">Последние заявки на аренду</span>
+        <a href="/admin/rentals" class="text-decoration-none d-flex align-items-center gap-1"
+           style="color:var(--text-secondary);font-size:.8rem;">
+            Все аренды <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
+    <div class="table-responsive">
+        <table class="table-dark-custom table mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Клиент</th>
+                    <th>Техника</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in recentRentals)
+                {
+                    var (sc, sb, sl) = r.Status switch
+                    {
+                        RentalStatus.Pending   => ("#fcd34d", "rgba(245,158,11,.12)", "Ожидает"),
+                        RentalStatus.Active    => ("#86efac", "rgba(34,197,94,.12)",   "Активна"),
+                        RentalStatus.Completed => ("var(--text-secondary)", "rgba(148,163,184,.08)", "Завершена"),
+                        _                      => ("#fca5a5", "rgba(239,68,68,.12)",   "Отменена")
+                    };
+                    <tr>
+                        <td style="color:var(--text-secondary);">#@r.Id</td>
+                        <td style="color:var(--text-primary);font-weight:600;">@r.User?.FullName</td>
+                        <td>
+                            <div style="color:var(--text-primary);font-size:.875rem;">@r.ProductUnit?.Product?.Name</div>
+                            <div style="color:var(--text-secondary);font-size:.75rem;">@r.ProductUnit?.SerialNumber</div>
+                        </td>
+                        <td style="color:var(--text-secondary);font-size:.85rem;">@r.CreatedAt.ToLocalTime().ToString("dd.MM.yy HH:mm")</td>
+                        <td>
+                            <span class="px-2 py-1 rounded-pill fw-600"
+                                  style="background:@sb;color:@sc;font-size:.75rem;white-space:nowrap;">@sl</span>
+                        </td>
+                        <td>
+                            <a href="/admin/rentals/@r.Id"
+                               class="d-inline-flex align-items-center justify-content-center"
+                               style="width:28px;height:28px;background:rgba(99,102,241,.15);color:var(--accent);border-radius:6px;text-decoration:none;font-size:.85rem;transition:all .2s;"
+                               onmouseover="this.style.background='var(--accent)';this.style.color='#fff'"
+                               onmouseout="this.style.background='rgba(99,102,241,.15)';this.style.color='var(--accent)'">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

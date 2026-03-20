@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Панель управления — @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        .admin-sidebar { min-height: 100vh; background: #1a1d20; width: 220px; min-width: 220px; }
+        .admin-sidebar .nav-link { color: #9ca3af; border-radius: 6px; padding: .45rem .75rem; }
+        .admin-sidebar .nav-link:hover { color: #fff; background: rgba(255,255,255,.08); }
+        .admin-sidebar .nav-link.active { color: #fff; background: #0d6efd; }
+        .admin-sidebar .brand { color: #fff; font-size: 1.2rem; font-weight: 700; }
+        .admin-content { background: #f8f9fa; min-height: 100vh; }
+    </style>
+</head>
+<body>
+<div class="d-flex">
+    <div class="admin-sidebar p-3 d-flex flex-column gap-1">
+        <a href="/" class="brand text-decoration-none mb-3 d-block">⚡ EL-Rent</a>
+        <span class="text-secondary small text-uppercase mb-1 ps-2">Управление</span>
+        <a href="/admin" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminDashboard" ? "active" : "")">
+            <i class="bi bi-speedometer2 me-2"></i>Дашборд
+        </a>
+        <a href="/admin/products" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminProduct" ? "active" : "")">
+            <i class="bi bi-box-seam me-2"></i>Товары
+        </a>
+        <a href="/admin/rentals" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminRental" ? "active" : "")">
+            <i class="bi bi-calendar-check me-2"></i>Аренды
+        </a>
+        <a href="/admin/repairs" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminRepair" ? "active" : "")">
+            <i class="bi bi-tools me-2"></i>Ремонты
+        </a>
+        <a href="/admin/locations" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminLocation" ? "active" : "")">
+            <i class="bi bi-geo-alt me-2"></i>Точки стоянки
+        </a>
+        <a href="/admin/users" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdminUser" ? "active" : "")">
+            <i class="bi bi-people me-2"></i>Пользователи
+        </a>
+        <div class="mt-auto pt-3 border-top border-secondary">
+            <a href="/" class="nav-link"><i class="bi bi-arrow-left me-2"></i>На сайт</a>
+        </div>
+    </div>
+
+    <div class="admin-content flex-grow-1 p-4">
+        @if (TempData["Success"] is string success)
+        {
+            <div class="alert alert-success alert-dismissible fade show">
+                @success <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        @if (TempData["Error"] is string error)
+        {
+            <div class="alert alert-danger alert-dismissible fade show">
+                @error <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        <main>@RenderBody()</main>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

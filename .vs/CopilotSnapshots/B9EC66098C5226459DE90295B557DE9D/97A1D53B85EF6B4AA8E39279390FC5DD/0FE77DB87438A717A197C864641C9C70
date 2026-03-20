@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Каталог";
+    var categories = ViewBag.Categories as IEnumerable<Category> ?? Enumerable.Empty<Category>();
+    int? selectedCategory = ViewBag.SelectedCategory;
+    string? search = ViewBag.Search;
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card border-0 shadow-sm mb-3">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3">Категории</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                        <a asp-action="Index" class="text-decoration-none @(selectedCategory == null ? "fw-bold text-primary" : "text-dark")">
+                            Все категории
+                        </a>
+                    </li>
+                    @foreach (var cat in categories)
+                    {
+                        <li class="mb-1">
+                            <a asp-action="Index" asp-route-categoryId="@cat.Id"
+                               class="text-decoration-none @(selectedCategory == cat.Id ? "fw-bold text-primary" : "text-dark")">
+                                <i class="bi @cat.IconClass me-1"></i>@cat.Name
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Каталог</h2>
+            <form asp-action="Index" method="get" class="d-flex gap-2">
+                <input type="hidden" name="categoryId" value="@selectedCategory" />
+                <input type="search" name="search" value="@search" class="form-control form-control-sm" placeholder="Поиск..." style="width:200px" />
+                <button type="submit" class="btn btn-sm btn-outline-secondary"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info">Товары не найдены.</div>
+        }
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var product in Model)
+            {
+                var availableCount = product.Units.Count(u => u.Status == UnitStatus.Available);
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">@product.Category.Name</span>
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text text-muted small">@product.Description</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="fw-bold text-primary">@product.PricePerHour ₽/ч</span>
+                                <br />
+                                <small class="text-muted">Залог: @product.DepositAmount ₽</small>
+                            </div>
+                            <div class="text-end">
+                                @if (availableCount > 0)
+                                {
+                                    <span class="badge bg-success mb-1 d-block">@availableCount свободно</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger mb-1 d-block">Нет в наличии</span>
+                                }
+                                <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-primary">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

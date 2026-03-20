@@ -1,0 +1,73 @@
+@model IEnumerable<Product>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Товары";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Товары</h4>
+        <p class="mb-0 text-secondary-custom" style="font-size:.875rem;">@Model.Count() позиций</p>
+    </div>
+    <a href="/admin/products/create" class="btn-accent btn px-4 d-flex align-items-center gap-2">
+        <i class="bi bi-plus-lg"></i>Добавить товар
+    </a>
+</div>
+
+<div class="card-dark overflow-hidden">
+    <div class="table-responsive">
+        <table class="table-dark-custom table align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Название</th>
+                    <th>Категория</th>
+                    <th>Цена/ч</th>
+                    <th>Залог</th>
+                    <th>Всего / Свободно</th>
+                    <th>Статус</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    var available = p.Units.Count(u => u.Status == UnitStatus.Available);
+                    <tr>
+                        <td style="color:var(--text-secondary);font-size:.8rem;">#@p.Id</td>
+                        <td style="color:var(--text-primary);font-weight:600;">@p.Name</td>
+                        <td>
+                            <span class="px-2 py-1 rounded-pill"
+                                  style="background:rgba(99,102,241,.12);color:var(--accent-hover);font-size:.75rem;font-weight:600;">
+                                @p.Category.Name
+                            </span>
+                        </td>
+                        <td style="color:var(--accent);font-weight:700;">@p.PricePerHour ₽</td>
+                        <td style="color:var(--text-secondary);">@p.DepositAmount ₽</td>
+                        <td>
+                            <span style="color:var(--text-secondary);">@p.Units.Count</span>
+                            <span style="color:var(--text-secondary);"> / </span>
+                            <span style="color:#86efac;font-weight:700;">@available</span>
+                        </td>
+                        <td>
+                            @if (p.IsActive)
+                            {
+                                <span class="px-2 py-1 rounded-pill" style="background:rgba(34,197,94,.12);color:#86efac;font-size:.75rem;font-weight:600;">Активен</span>
+                            }
+                            else
+                            {
+                                <span class="px-2 py-1 rounded-pill" style="background:rgba(239,68,68,.12);color:#fca5a5;font-size:.75rem;font-weight:600;">Скрыт</span>
+                            }
+                        </td>
+                        <td class="text-end">
+                            <a href="/admin/products/units/@p.Id"
+                               style="background:rgba(255,255,255,.06);color:var(--text-secondary);border-radius:6px;padding:.3rem .7rem;text-decoration:none;font-size:.8rem;font-weight:600;margin-right:.3rem;display:inline-block;">Экземпляры</a>
+                            <a href="/admin/products/edit/@p.Id"
+                               style="background:rgba(99,102,241,.12);color:var(--accent);border-radius:6px;padding:.3rem .7rem;text-decoration:none;font-size:.8rem;font-weight:600;display:inline-block;">Редакт.</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model Repair
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Новый ремонт";
+}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <a href="/admin/repairs" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left"></i></a>
+    <h4 class="mb-0">Создать заявку на ремонт</h4>
+</div>
+
+<div class="card border-0 shadow-sm" style="max-width:560px">
+    <div class="card-body p-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2"></div>
+
+            <div class="mb-3">
+                <label asp-for="ProductUnitId" class="form-label fw-semibold">Экземпляр техники</label>
+                <select asp-for="ProductUnitId" class="form-select" asp-items="ViewBag.Units">
+                    <option value="">— Выберите —</option>
+                </select>
+                <span asp-validation-for="ProductUnitId" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Reason" class="form-label fw-semibold">Причина ремонта</label>
+                <input asp-for="Reason" class="form-control" placeholder="Опишите неисправность" />
+                <span asp-validation-for="Reason" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Notes" class="form-label fw-semibold">Дополнительные заметки</label>
+                <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="alert alert-info small">
+                <i class="bi bi-info-circle me-1"></i>
+                После создания статус техники автоматически изменится на «Ремонт».
+            </div>
+
+            <button type="submit" class="btn btn-warning">
+                <i class="bi bi-tools me-1"></i>Создать заявку
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Пользователи";
+}
+
+<h4 class="mb-4">👥 Пользователи</h4>
+
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Телефон</th>
+                    <th>Зарегистрирован</th>
+                    <th>Статус</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr class="@(user.IsBlocked ? "table-danger" : "")">
+                        <td class="fw-semibold">@user.FullName</td>
+                        <td>@user.Email</td>
+                        <td>@(user.Phone ?? "—")</td>
+                        <td class="small text-muted">@user.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy")</td>
+                        <td>
+                            @if (user.IsBlocked)
+                            {
+                                <span class="badge bg-danger">Заблокирован</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">Активен</span>
+                            }
+                        </td>
+                        <td>
+                            <form asp-action="Block" asp-route-id="@user.Id" method="post"
+                                  onsubmit="return confirm('@(user.IsBlocked ? "Разблокировать" : "Заблокировать") пользователя?')">
+                                @Html.AntiForgeryToken()
+                                <button type="submit"
+                                        class="btn btn-sm @(user.IsBlocked ? "btn-outline-success" : "btn-outline-danger")">
+                                    @(user.IsBlocked ? "Разблокировать" : "Заблокировать")
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

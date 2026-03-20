@@ -1,0 +1,44 @@
+using Electrical_Equipment_Rental.Data;
+using Electrical_Equipment_Rental.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+
+namespace Electrical_Equipment_Rental.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly AppDbContext _context;
+
+        public HomeController(AppDbContext context) => _context = context;
+
+        public async Task<IActionResult> Index()
+        {
+            var categories = await _context.Categories
+                .Include(c => c.Products.Where(p => p.IsActive))
+                .Where(c => c.IsActive)
+                .ToListAsync();
+            return View(categories);
+        }
+
+        public IActionResult Privacy() => View();
+
+        [Route("map")]
+        public async Task<IActionResult> Map()
+        {
+            ViewBag.Locations = await _context.Locations.Where(l => l.IsActive).ToListAsync();
+            ViewBag.Units = await _context.ProductUnits
+                .Include(u => u.Product)
+                .Include(u => u.CurrentLocation)
+                .Where(u => u.CurrentLocation != null)
+                .ToListAsync();
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}

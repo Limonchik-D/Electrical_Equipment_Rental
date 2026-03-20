@@ -1,0 +1,105 @@
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Каталог";
+    var categories = ViewBag.Categories as IEnumerable<Category> ?? Enumerable.Empty<Category>();
+    int? selectedCategory = ViewBag.SelectedCategory;
+    string? search = ViewBag.Search;
+}
+
+<div class="row g-4">
+    <!-- Sidebar -->
+    <div class="col-md-3">
+        <div class="sidebar-card">
+            <p class="text-secondary-custom fw-700 small text-uppercase mb-2" style="letter-spacing:.06em;">Категории</p>
+            <a asp-action="Index" class="sidebar-link @(selectedCategory == null ? "active" : "")">
+                <i class="bi bi-grid me-2"></i>Все категории
+            </a>
+            @foreach (var cat in categories)
+            {
+                <a asp-action="Index" asp-route-categoryId="@cat.Id"
+                   class="sidebar-link @(selectedCategory == cat.Id ? "active" : "")">
+                    <i class="bi @cat.IconClass me-2"></i>@cat.Name
+                </a>
+            }
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div class="col-md-9">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+                <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Каталог</h4>
+                <p class="mb-0" style="color:var(--text-secondary);font-size:.875rem;">@Model.Count() товаров</p>
+            </div>
+            <form asp-action="Index" method="get">
+                <input type="hidden" name="categoryId" value="@selectedCategory" />
+                <div class="d-flex gap-2">
+                    <div style="position:relative;">
+                        <i class="bi bi-search" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--text-secondary);font-size:.875rem;"></i>
+                        <input type="search" name="search" value="@search"
+                               class="form-control-dark"
+                               style="padding-left:2.25rem;min-width:200px;"
+                               placeholder="Поиск техники..." />
+                    </div>
+                    <button type="submit" class="btn-accent btn px-3">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        @if (!Model.Any())
+        {
+            <div class="alert-dark-info p-4 text-center rounded-custom">
+                <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+                Товары не найдены. Попробуйте изменить параметры поиска.
+            </div>
+        }
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var product in Model)
+            {
+                var availableCount = product.Units.Count(u => u.Status == UnitStatus.Available);
+                <div class="col fade-in-up">
+                    <div class="product-card">
+                        <div class="product-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge-accent px-2 py-1 rounded-pill"
+                                      style="background:rgba(99,102,241,.12);color:var(--accent-hover);font-size:.72rem;font-weight:600;">
+                                    @product.Category.Name
+                                </span>
+                                @if (availableCount > 0)
+                                {
+                                    <span class="badge-success px-2 py-1 rounded-pill"
+                                          style="background:rgba(34,197,94,.12);color:#86efac;font-size:.72rem;font-weight:600;">
+                                        ✓ @availableCount свободно
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge-danger px-2 py-1 rounded-pill"
+                                          style="background:rgba(239,68,68,.12);color:#fca5a5;font-size:.72rem;font-weight:600;">
+                                        Нет в наличии
+                                    </span>
+                                }
+                            </div>
+                            <h6 class="fw-700 mt-2 mb-1" style="color:var(--text-primary)">@product.Name</h6>
+                            <p style="color:var(--text-secondary);font-size:.8rem;line-height:1.5;">@product.Description</p>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <div class="fw-800" style="color:var(--accent);font-size:1.1rem;">@product.PricePerHour ₽/ч</div>
+                                <div style="color:var(--text-secondary);font-size:.75rem;">Залог: @product.DepositAmount ₽</div>
+                            </div>
+                            <a asp-action="Details" asp-route-id="@product.Id"
+                               class="btn-accent btn btn-sm px-3 d-flex align-items-center gap-1">
+                                <i class="bi bi-arrow-right"></i> Подробнее
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

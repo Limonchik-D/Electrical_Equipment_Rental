@@ -1,0 +1,110 @@
+﻿@model Product
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Экземпляры — " + Model.Name;
+}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <a href="/admin/products"
+       style="background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text-secondary);border-radius:var(--radius-sm);padding:.35rem .7rem;text-decoration:none;font-size:.85rem;">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+    <div>
+        <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Экземпляры: @Model.Name</h4>
+        <p class="mb-0 text-secondary-custom" style="font-size:.875rem;">@Model.Units.Count единиц</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-8">
+        <div class="card-dark overflow-hidden">
+            <div class="table-responsive">
+                <table class="table-dark-custom table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>Серийный номер</th>
+                            <th>Статус</th>
+                            <th>Точка стоянки</th>
+                            <th>Добавлен</th>
+                            <th>Изменить статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var unit in Model.Units)
+                        {
+                            var (badgeBg, badgeColor) = unit.Status switch
+                            {
+                                UnitStatus.Available => ("rgba(34,197,94,.12)",   "#86efac"),
+                                UnitStatus.Rented    => ("rgba(99,102,241,.12)", "#a5b4fc"),
+                                UnitStatus.Repair    => ("rgba(245,158,11,.12)", "#fcd34d"),
+                                UnitStatus.Retired   => ("rgba(148,163,184,.1)", "#94a3b8"),
+                                _                    => ("rgba(148,163,184,.1)", "#94a3b8")
+                            };
+                            var statusLabel = unit.Status switch
+                            {
+                                UnitStatus.Available => "Свободен",
+                                UnitStatus.Rented    => "В аренде",
+                                UnitStatus.Repair    => "Ремонт",
+                                UnitStatus.Retired   => "Списан",
+                                _                    => unit.Status.ToString()
+                            };
+                            <tr>
+                                <td style="color:var(--text-primary);font-weight:600;">@unit.SerialNumber</td>
+                                <td>
+                                    <span class="px-2 py-1 rounded-pill"
+                                          style="background:@badgeBg;color:@badgeColor;font-size:.75rem;font-weight:600;">
+                                        @statusLabel
+                                    </span>
+                                </td>
+                                <td style="color:var(--text-secondary);font-size:.875rem;">@(unit.CurrentLocation?.Name ?? "—")</td>
+                                <td style="color:var(--text-secondary);font-size:.82rem;">@unit.AddedAt.ToLocalTime().ToString("dd.MM.yyyy")</td>
+                                <td>
+                                    <form asp-action="ChangeUnitStatus" method="post" class="d-flex gap-1">
+                                        <input type="hidden" name="unitId" value="@unit.Id" />
+                                        <input type="hidden" name="productId" value="@Model.Id" />
+                                        <select name="status" class="form-select-dark" style="width:120px">
+                                            @foreach (var s in Enum.GetValues<UnitStatus>())
+                                            {
+                                                <option value="@s" selected="@(unit.Status == s)">@s</option>
+                                            }
+                                        </select>
+                                        <button type="submit"
+                                                style="background:rgba(99,102,241,.12);color:var(--accent);border:1px solid rgba(99,102,241,.3);border-radius:6px;padding:.3rem .7rem;font-size:.8rem;font-weight:600;cursor:pointer;">
+                                            OK
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-dark">
+            <div class="p-3 mb-0" style="border-bottom:1px solid var(--border);">
+                <span style="color:var(--text-secondary);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;">
+                    Добавить экземпляр
+                </span>
+            </div>
+            <div class="p-3">
+                <form asp-action="AddUnit" asp-route-productId="@Model.Id" method="post">
+                    <div class="mb-3">
+                        <label class="form-label-dark">Серийный номер</label>
+                        <input type="text" name="serialNumber" class="form-control-dark w-100"
+                               placeholder="SN-XXX-001" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label-dark">Точка стоянки</label>
+                        <select name="locationId" class="form-select-dark" asp-items="ViewBag.Locations">
+                            <option value="">— Не указано —</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-accent btn w-100">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

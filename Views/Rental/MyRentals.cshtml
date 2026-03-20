@@ -1,0 +1,100 @@
+@model IEnumerable<Rental>
+@{
+    ViewData["Title"] = "Мои аренды";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Мои аренды</h4>
+        <p class="mb-0 text-secondary-custom" style="font-size:.875rem;">@Model.Count() записей</p>
+    </div>
+    <a asp-controller="Catalog" asp-action="Index" class="btn-accent btn px-4 d-flex align-items-center gap-2">
+        <i class="bi bi-plus-circle"></i> Новая аренда
+    </a>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="card-dark p-5 text-center">
+        <i class="bi bi-calendar-x" style="font-size:3rem;color:var(--text-secondary);"></i>
+        <p class="mt-3 text-secondary-custom">У вас пока нет аренд.</p>
+        <a asp-controller="Catalog" asp-action="Index" class="btn-accent btn px-4 mt-2">Перейти в каталог</a>
+    </div>
+}
+else
+{
+    <div class="d-flex flex-column gap-3">
+        @foreach (var rental in Model)
+        {
+            var (statusColor, statusBg, statusLabel) = rental.Status switch
+            {
+                RentalStatus.Pending    => ("#fcd34d", "rgba(245,158,11,.12)", "Ожидает подтверждения"),
+                RentalStatus.Active     => ("#86efac", "rgba(34,197,94,.12)",   "Активна"),
+                RentalStatus.Completed  => ("var(--text-secondary)", "rgba(148,163,184,.08)", "Завершена"),
+                RentalStatus.Cancelled  => ("#fca5a5", "rgba(239,68,68,.12)",   "Отменена"),
+                _                       => ("var(--text-secondary)", "transparent", rental.Status.ToString())
+            };
+
+            <div class="card-dark p-4 fade-in-up">
+                <div class="row align-items-center g-3">
+                    <div class="col-md-5">
+                        <div class="fw-700" style="color:var(--text-primary);font-size:1rem;">
+                            @rental.ProductUnit.Product.Name
+                        </div>
+                        <div style="color:var(--text-secondary);font-size:.8rem;margin-top:.2rem;">
+                            <i class="bi bi-cpu me-1"></i>S/N: @rental.ProductUnit.SerialNumber
+                        </div>
+                        @if (rental.StartLocation != null)
+                        {
+                            <div style="color:var(--text-secondary);font-size:.8rem;margin-top:.2rem;">
+                                <i class="bi bi-geo-alt me-1"></i>@rental.StartLocation.Name
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-4">
+                        <div style="font-size:.75rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.04em;">Оформлено</div>
+                        <div style="color:var(--text-primary);font-size:.875rem;font-weight:600;">
+                            @rental.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm")
+                        </div>
+                        @if (rental.PlannedEndAt.HasValue)
+                        {
+                            <div style="font-size:.75rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-top:.4rem;">Вернуть до</div>
+                            <div style="color:var(--text-primary);font-size:.875rem;font-weight:600;">
+                                @rental.PlannedEndAt.Value.ToLocalTime().ToString("dd.MM.yyyy HH:mm")
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-3 d-flex flex-column align-items-md-end gap-2">
+                        <span class="px-3 py-1 rounded-pill fw-600"
+                              style="background:@statusBg;color:@statusColor;font-size:.78rem;white-space:nowrap;">
+                            @statusLabel
+                        </span>
+                        @if (rental.TotalAmount.HasValue)
+                        {
+                            <div class="fw-700" style="color:var(--text-primary);">Итого: @rental.TotalAmount ₽</div>
+                        }
+                        @if (rental.FineAmount.HasValue && rental.FineAmount > 0)
+                        {
+                            <div style="color:#fca5a5;font-size:.8rem;font-weight:600;">Штраф: @rental.FineAmount ₽</div>
+                        }
+                        @if (rental.Status == RentalStatus.Pending)
+                        {
+                            <form asp-action="Cancel" method="post"
+                                  onsubmit="return confirm('Отменить аренду?')" class="m-0">
+                                <input type="hidden" name="id" value="@rental.Id" />
+                                @Html.AntiForgeryToken()
+                                <button type="submit"
+                                        style="background:transparent;border:1px solid rgba(239,68,68,.4);color:#fca5a5;border-radius:6px;padding:.3rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;"
+                                        onmouseover="this.style.background='rgba(239,68,68,.12)'"
+                                        onmouseout="this.style.background='transparent'">
+                                    <i class="bi bi-x-circle me-1"></i>Отменить
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+

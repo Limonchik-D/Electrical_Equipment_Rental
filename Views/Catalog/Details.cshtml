@@ -1,0 +1,122 @@
+@model Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb" style="background:none;padding:0;">
+        <li class="breadcrumb-item">
+            <a asp-controller="Catalog" asp-action="Index">Каталог</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="Catalog" asp-action="Index" asp-route-categoryId="@Model.CategoryId">@Model.Category.Name</a>
+        </li>
+        <li class="breadcrumb-item active">@Model.Name</li>
+    </ol>
+</nav>
+
+<div class="row g-4 mb-5">
+    <div class="col-lg-8">
+        <div class="card-dark p-4 mb-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="px-2 py-1 rounded-pill"
+                      style="background:rgba(99,102,241,.12);color:var(--accent-hover);font-size:.75rem;font-weight:600;">
+                    <i class="bi bi-tag me-1"></i>@Model.Category.Name
+                </span>
+            </div>
+            <h2 class="fw-800 mb-2" style="color:var(--text-primary)">@Model.Name</h2>
+            <p style="color:var(--text-secondary);line-height:1.7;">@Model.Description</p>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-6">
+                <div class="card-dark p-4 text-center">
+                    <div class="fw-800" style="font-size:2rem;color:var(--accent);">@Model.PricePerHour ₽</div>
+                    <div style="color:var(--text-secondary);font-size:.8rem;margin-top:.25rem;">за час</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card-dark p-4 text-center">
+                    <div class="fw-800" style="font-size:2rem;color:#f59e0b;">@Model.DepositAmount ₽</div>
+                    <div style="color:var(--text-secondary);font-size:.8rem;margin-top:.25rem;">залог</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card-dark p-4 h-100 d-flex flex-column gap-3">
+            <div style="font-size:5rem;text-align:center;filter:drop-shadow(0 0 20px rgba(99,102,241,.4))">
+                <i class="bi @Model.Category.IconClass" style="color:var(--accent);"></i>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:1rem;">
+                <div class="d-flex justify-content-between mb-2">
+                    <span style="color:var(--text-secondary);font-size:.85rem;">Категория</span>
+                    <span style="color:var(--text-primary);font-size:.85rem;font-weight:600;">@Model.Category.Name</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span style="color:var(--text-secondary);font-size:.85rem;">Экземпляров</span>
+                    <span style="color:var(--text-primary);font-size:.85rem;font-weight:600;">@Model.Units.Count()</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span style="color:var(--text-secondary);font-size:.85rem;">Свободно</span>
+                    @{var free = Model.Units.Count(u => u.Status == UnitStatus.Available);}
+                    <span style="font-size:.85rem;font-weight:600;color:@(free > 0 ? "#86efac" : "#fca5a5");">@free шт.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Units -->
+<div class="d-flex align-items-center gap-2 mb-3">
+    <div style="width:3px;height:20px;background:var(--accent);border-radius:2px;"></div>
+    <h5 class="fw-700 mb-0" style="color:var(--text-primary)">Доступные экземпляры</h5>
+</div>
+
+@if (!Model.Units.Any())
+{
+    <div class="alert-dark-warning p-4 text-center rounded-custom">
+        <i class="bi bi-exclamation-triangle fs-3 d-block mb-2"></i>
+        Сейчас нет свободных экземпляров. Попробуйте позже.
+    </div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 g-3">
+        @foreach (var unit in Model.Units)
+        {
+            <div class="col fade-in-up">
+                <div class="card-dark p-3 d-flex justify-content-between align-items-center gap-3">
+                    <div>
+                        <div class="fw-600 d-flex align-items-center gap-2" style="color:var(--text-primary);">
+                            <i class="bi bi-cpu" style="color:var(--accent);"></i>
+                            S/N: @unit.SerialNumber
+                        </div>
+                        @if (unit.CurrentLocation != null)
+                        {
+                            <div class="d-flex align-items-center gap-1 mt-1"
+                                 style="color:var(--text-secondary);font-size:.8rem;">
+                                <i class="bi bi-geo-alt"></i>@unit.CurrentLocation.Name
+                            </div>
+                        }
+                    </div>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-controller="Rental" asp-action="Create" asp-route-unitId="@unit.Id"
+                           class="btn-accent btn btn-sm px-3 d-flex align-items-center gap-1 flex-shrink-0">
+                            <i class="bi bi-cart-plus"></i> Арендовать
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/account/login"
+                           class="btn-outline-accent btn btn-sm px-3 flex-shrink-0">Войти</a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+

@@ -1,0 +1,101 @@
+@using System.Text.Json
+@{
+    ViewData["Title"] = "Карта точек проката";
+    var locations = (ViewBag.Locations as List<Electrical_Equipment_Rental.Models.Location>) ?? new();
+    var units = (ViewBag.Units as List<Electrical_Equipment_Rental.Models.ProductUnit>) ?? new();
+
+    var jsonOpts = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+
+    var locJson = JsonSerializer.Serialize(
+        locations.Select(l => new { l.Id, l.Name, l.Address, l.Latitude, l.Longitude }),
+        jsonOpts);
+
+    var unitsJson = JsonSerializer.Serialize(
+        units.Select(u => new
+        {
+            u.SerialNumber,
+            ProductName = u.Product.Name,
+            Status = u.Status.ToString(),
+            Lat = u.CurrentLocation!.Latitude,
+            Lng = u.CurrentLocation!.Longitude,
+            LocationName = u.CurrentLocation!.Name
+        }),
+        jsonOpts);
+}
+
+<div class="d-flex align-items-center gap-2 mb-4">
+    <div style="width:3px;height:24px;background:var(--accent);border-radius:2px;"></div>
+    <h4 class="fw-800 mb-0" style="color:var(--text-primary)">@ViewData["Title"]</h4>
+</div>
+
+<!-- Legend -->
+<div class="card-dark p-3 mb-3 d-flex flex-wrap gap-4 align-items-center">
+    <span style="font-size:.75rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.05em;font-weight:700;">Легенда:</span>
+    <span class="d-flex align-items-center gap-2" style="font-size:.85rem;color:var(--text-secondary);">
+        <span style="width:12px;height:12px;border-radius:50%;background:#22c55e;display:inline-block;box-shadow:0 0 6px rgba(34,197,94,.5);"></span>
+        Точка проката
+    </span>
+    <span class="d-flex align-items-center gap-2" style="font-size:.85rem;color:var(--text-secondary);">
+        <span style="width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:0 0 6px var(--accent-glow);"></span>
+        Свободная техника
+    </span>
+    <span class="d-flex align-items-center gap-2" style="font-size:.85rem;color:var(--text-secondary);">
+        <span style="width:12px;height:12px;border-radius:50%;background:#ef4444;display:inline-block;box-shadow:0 0 6px rgba(239,68,68,.5);"></span>
+        В аренде
+    </span>
+    <span class="d-flex align-items-center gap-2" style="font-size:.85rem;color:var(--text-secondary);">
+        <span style="width:12px;height:12px;border-radius:50%;background:#f59e0b;display:inline-block;box-shadow:0 0 6px rgba(245,158,11,.5);"></span>
+        В ремонте
+    </span>
+    <div class="ms-auto d-flex gap-2">
+        <span class="px-3 py-1 rounded-pill" style="background:rgba(99,102,241,.12);color:var(--accent-hover);font-size:.78rem;font-weight:600;">
+            <i class="bi bi-geo-alt me-1"></i>@locations.Count точек
+        </span>
+        <span class="px-3 py-1 rounded-pill" style="background:rgba(34,197,94,.1);color:#86efac;font-size:.78rem;font-weight:600;">
+            <i class="bi bi-bicycle me-1"></i>@units.Count единиц
+        </span>
+    </div>
+</div>
+
+<div id="map" style="height:calc(100vh - 280px);min-height:480px;"></div>
+
+@section Scripts {
+<script>
+    var map = L.map('map').setView([47.7631, 29.6383], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    function colorIcon(color, glow) {
+        return L.divIcon({
+            className: '',
+            html: '<div style="width:20px;height:20px;border-radius:50%;background:' + color + ';border:3px solid rgba(255,255,255,.9);box-shadow:0 0 10px ' + (glow || 'rgba(0,0,0,.3)') + ';"></div>',
+            iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -14]
+        });
+    }
+
+    var locations = @Html.Raw(locJson);
+    locations.forEach(function(loc) {
+        L.marker([loc.latitude, loc.longitude], { icon: colorIcon('#22c55e', 'rgba(34,197,94,.5)') })
+            .addTo(map)
+            .bindPopup('<div style="font-family:Inter,sans-serif;min-width:160px;"><b style="color:#1e293b;">📍 ' + loc.name + '</b><br><span style="color:#64748b;font-size:.85rem;">' + loc.address + '</span></div>');
+    });
+
+    var statusColors = {
+        'Available': ['#6366f1', 'rgba(99,102,241,.5)'],
+        'Rented':    ['#ef4444', 'rgba(239,68,68,.5)'],
+        'Repair':    ['#f59e0b', 'rgba(245,158,11,.5)'],
+        'Retired':   ['#64748b', 'rgba(100,116,139,.3)']
+    };
+
+    var units = @Html.Raw(unitsJson);
+    units.forEach(function(u) {
+        var sc = statusColors[u.status] || ['#6366f1', 'rgba(99,102,241,.5)'];
+        L.marker([u.lat, u.lng], { icon: colorIcon(sc[0], sc[1]) })
+            .addTo(map)
+            .bindPopup('<div style="font-family:Inter,sans-serif;min-width:180px;"><b style="color:#1e293b;">' + u.productName + '</b><br><span style="color:#64748b;font-size:.82rem;">S/N: ' + u.serialNumber + '</span><br><span style="color:#64748b;font-size:.82rem;">📍 ' + u.locationName + '</span><br><span style="font-size:.82rem;font-weight:600;color:#334155;">Статус: ' + u.status + '</span></div>');
+    });
+</script>
+}
+

@@ -1,0 +1,61 @@
+﻿@using System.Text.Json
+@{
+    ViewData["Title"] = "Карта точек проката";
+    var locations = (ViewBag.Locations as List<Electrical_Equipment_Rental.Models.Location>) ?? new();
+    var units = (ViewBag.Units as List<Electrical_Equipment_Rental.Models.ProductUnit>) ?? new();
+
+    var locJson = JsonSerializer.Serialize(locations.Select(l => new { l.Id, l.Name, l.Address, l.Latitude, l.Longitude }));
+    var unitsJson = JsonSerializer.Serialize(units.Select(u => new
+    {
+        u.SerialNumber,
+        ProductName = u.Product.Name,
+        Status = u.Status.ToString(),
+        Lat = u.CurrentLocation!.Latitude,
+        Lng = u.CurrentLocation!.Longitude,
+        LocationName = u.CurrentLocation!.Name
+    }));
+}
+
+<h2 class="mb-3">@ViewData["Title"]</h2>
+
+<div class="mb-3 d-flex gap-3 flex-wrap">
+    <span><span class="badge" style="background:#28a745">●</span> Точка проката</span>
+    <span><span class="badge" style="background:#007bff">●</span> Свободная техника</span>
+    <span><span class="badge" style="background:#dc3545">●</span> Техника в аренде</span>
+    <span><span class="badge" style="background:#ffc107; color:#000">●</span> Техника в ремонте</span>
+</div>
+
+<div id="map" style="height:520px; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,.15);"></div>
+
+@section Scripts {
+<script>
+    var map = L.map('map').setView([47.7631, 29.6383], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    function colorIcon(color) {
+        return L.divIcon({
+            className: '',
+            html: '<div style="width:18px;height:18px;border-radius:50%;background:' + color + ';border:3px solid #fff;box-shadow:0 0 5px rgba(0,0,0,.4);"></div>',
+            iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -12]
+        });
+    }
+
+    var locations = @Html.Raw(locJson);
+    locations.forEach(function(loc) {
+        L.marker([loc.latitude, loc.longitude], { icon: colorIcon('#28a745') })
+            .addTo(map)
+            .bindPopup('<b>📍 ' + loc.name + '</b><br>' + loc.address);
+    });
+
+    var statusColors = { 'Available': '#007bff', 'Rented': '#dc3545', 'Repair': '#ffc107', 'Retired': '#6c757d' };
+    var units = @Html.Raw(unitsJson);
+    units.forEach(function(u) {
+        var color = statusColors[u.status] || '#007bff';
+        L.marker([u.lat, u.lng], { icon: colorIcon(color) })
+            .addTo(map)
+            .bindPopup('<b>' + u.productName + '</b><br>S/N: ' + u.serialNumber + '<br>Статус: ' + u.status + '<br>📍 ' + u.locationName);
+    });
+</script>
+}

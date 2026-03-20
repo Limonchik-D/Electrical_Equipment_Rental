@@ -1,0 +1,52 @@
+@model Repair
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Новый ремонт";
+}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <a href="/admin/repairs"
+       style="background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text-secondary);border-radius:var(--radius-sm);padding:.35rem .7rem;text-decoration:none;font-size:.85rem;">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+    <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Создать заявку на ремонт</h4>
+</div>
+
+<div class="card-dark p-4" style="max-width:560px">
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="mb-3 p-3 rounded"
+             style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5;font-size:.875rem;"></div>
+
+        <div class="mb-3">
+            <label asp-for="ProductUnitId" class="form-label-dark">Экземпляр техники</label>
+            <select asp-for="ProductUnitId" class="form-select-dark" asp-items="ViewBag.Units">
+                <option value="">— Выберите —</option>
+            </select>
+            <span asp-validation-for="ProductUnitId" style="color:#fca5a5;font-size:.8rem;"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Reason" class="form-label-dark">Причина ремонта</label>
+            <input asp-for="Reason" class="form-control-dark w-100" placeholder="Опишите неисправность" />
+            <span asp-validation-for="Reason" style="color:#fca5a5;font-size:.8rem;"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Notes" class="form-label-dark">Дополнительные заметки</label>
+            <textarea asp-for="Notes" class="form-control-dark w-100" rows="3"></textarea>
+        </div>
+
+        <div class="mb-4 p-3 rounded d-flex align-items-start gap-2"
+             style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+            <i class="bi bi-info-circle mt-1" style="color:var(--accent);flex-shrink:0;"></i>
+            <span style="color:var(--text-secondary);font-size:.875rem;">
+                После создания статус техники автоматически изменится на «Ремонт».
+            </span>
+        </div>
+
+        <button type="submit"
+                style="background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.35);color:#fcd34d;border-radius:var(--radius-sm);padding:.55rem 1.5rem;font-weight:600;font-size:.875rem;cursor:pointer;transition:all .2s;">
+            <i class="bi bi-tools me-1"></i>Создать заявку
+        </button>
+    </form>
+</div>

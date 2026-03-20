@@ -1,0 +1,50 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5 col-lg-4">
+        <div class="text-center mb-4">
+            <div style="width:56px;height:56px;background:var(--accent);border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;">⚡</div>
+            <h4 class="fw-800" style="color:var(--text-primary)">Добро пожаловать</h4>
+            <p class="text-secondary-custom" style="font-size:.875rem;">Войдите в свой аккаунт EL-Rent</p>
+        </div>
+
+        <div class="card-dark p-4">
+            <form asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert-dark-danger p-3 rounded-custom mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label-dark">Email</label>
+                    <input asp-for="Email" class="form-control-dark w-100"
+                           placeholder="mail@example.com" autocomplete="email" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label-dark">Пароль</label>
+                    <input asp-for="Password" class="form-control-dark w-100" autocomplete="current-password" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4 d-flex align-items-center gap-2">
+                    <input asp-for="RememberMe" class="form-check-input form-check-input-dark" style="width:18px;height:18px;" />
+                    <label asp-for="RememberMe" class="text-secondary-custom" style="font-size:.875rem;margin:0;">Запомнить меня</label>
+                </div>
+
+                <button type="submit" class="btn-accent btn w-100 py-2 fw-600">Войти</button>
+            </form>
+        </div>
+
+        <p class="mt-4 text-center text-secondary-custom" style="font-size:.875rem;">
+            Нет аккаунта?
+            <a asp-controller="Account" asp-action="Register" class="fw-600">Зарегистрироваться</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+

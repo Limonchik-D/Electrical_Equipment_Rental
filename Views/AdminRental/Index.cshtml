@@ -1,0 +1,104 @@
+@model IEnumerable<Rental>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Аренды";
+    var currentStatus = ViewBag.Status as RentalStatus?;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-800 mb-0" style="color:var(--text-primary)">Аренды</h4>
+        <p class="mb-0 text-secondary-custom" style="font-size:.875rem;">@Model.Count() записей</p>
+    </div>
+</div>
+
+<!-- Filter tabs -->
+<div class="mb-4 d-flex gap-2 flex-wrap">
+    @{
+        string FilterBtn(bool active, string label) =>
+            active
+            ? $"px-3 py-1 rounded-pill fw-600 border-0 cursor-pointer"
+            : $"px-3 py-1 rounded-pill fw-600 border-0 cursor-pointer";
+    }
+    <a href="/admin/rentals"
+       style="@(currentStatus == null ? "background:var(--accent);color:#fff;" : "background:rgba(255,255,255,.06);color:var(--text-secondary);")"
+       class="text-decoration-none px-3 py-1 rounded-pill fw-600 d-inline-block" style2="font-size:.85rem;">Все</a>
+    <a href="/admin/rentals?status=Pending"
+       style="@(currentStatus == RentalStatus.Pending ? "background:rgba(245,158,11,.2);color:#fcd34d;" : "background:rgba(255,255,255,.06);color:var(--text-secondary);")"
+       class="text-decoration-none px-3 py-1 rounded-pill fw-600 d-inline-block">Ожидают</a>
+    <a href="/admin/rentals?status=Active"
+       style="@(currentStatus == RentalStatus.Active ? "background:rgba(34,197,94,.2);color:#86efac;" : "background:rgba(255,255,255,.06);color:var(--text-secondary);")"
+       class="text-decoration-none px-3 py-1 rounded-pill fw-600 d-inline-block">Активные</a>
+    <a href="/admin/rentals?status=Completed"
+       style="@(currentStatus == RentalStatus.Completed ? "background:rgba(148,163,184,.15);color:var(--text-primary);" : "background:rgba(255,255,255,.06);color:var(--text-secondary);")"
+       class="text-decoration-none px-3 py-1 rounded-pill fw-600 d-inline-block">Завершённые</a>
+    <a href="/admin/rentals?status=Cancelled"
+       style="@(currentStatus == RentalStatus.Cancelled ? "background:rgba(239,68,68,.2);color:#fca5a5;" : "background:rgba(255,255,255,.06);color:var(--text-secondary);")"
+       class="text-decoration-none px-3 py-1 rounded-pill fw-600 d-inline-block">Отменённые</a>
+</div>
+
+<div class="card-dark overflow-hidden">
+    <div class="table-responsive">
+        <table class="table-dark-custom table align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Клиент</th>
+                    <th>Техника</th>
+                    <th>Точка получения</th>
+                    <th>Оформлено</th>
+                    <th>Статус</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="7" class="text-center py-5">
+                            <i class="bi bi-inbox" style="font-size:2.5rem;color:var(--text-secondary);display:block;margin-bottom:.75rem;"></i>
+                            <span style="color:var(--text-secondary);">Нет аренд для отображения</span>
+                        </td>
+                    </tr>
+                }
+                @foreach (var r in Model)
+                {
+                    var (sc, sb, sl) = r.Status switch
+                    {
+                        RentalStatus.Pending   => ("#fcd34d", "rgba(245,158,11,.12)", "Ожидает"),
+                        RentalStatus.Active    => ("#86efac", "rgba(34,197,94,.12)",   "Активна"),
+                        RentalStatus.Completed => ("var(--text-secondary)", "rgba(148,163,184,.08)", "Завершена"),
+                        _                      => ("#fca5a5", "rgba(239,68,68,.12)",   "Отменена")
+                    };
+                    <tr>
+                        <td style="color:var(--text-secondary);font-size:.8rem;">#@r.Id</td>
+                        <td>
+                            <div style="color:var(--text-primary);font-weight:600;font-size:.875rem;">@r.User?.FullName</div>
+                            <div style="color:var(--text-secondary);font-size:.75rem;">@r.User?.Email</div>
+                        </td>
+                        <td>
+                            <div style="color:var(--text-primary);font-size:.875rem;">@r.ProductUnit?.Product?.Name</div>
+                            <div style="color:var(--text-secondary);font-size:.75rem;">@r.ProductUnit?.SerialNumber</div>
+                        </td>
+                        <td style="color:var(--text-secondary);font-size:.85rem;">@r.StartLocation?.Name</td>
+                        <td style="color:var(--text-secondary);font-size:.82rem;">@r.CreatedAt.ToLocalTime().ToString("dd.MM.yy HH:mm")</td>
+                        <td>
+                            <span class="px-2 py-1 rounded-pill fw-600"
+                                  style="background:@sb;color:@sc;font-size:.75rem;white-space:nowrap;">@sl</span>
+                        </td>
+                        <td>
+                            <a href="/admin/rentals/@r.Id"
+                               class="d-inline-flex align-items-center gap-1"
+                               style="background:rgba(99,102,241,.12);color:var(--accent);border-radius:6px;padding:.3rem .75rem;text-decoration:none;font-size:.8rem;font-weight:600;transition:all .2s;"
+                               onmouseover="this.style.background='var(--accent)';this.style.color='#fff'"
+                               onmouseout="this.style.background='rgba(99,102,241,.12)';this.style.color='var(--accent)'">
+                                Открыть <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

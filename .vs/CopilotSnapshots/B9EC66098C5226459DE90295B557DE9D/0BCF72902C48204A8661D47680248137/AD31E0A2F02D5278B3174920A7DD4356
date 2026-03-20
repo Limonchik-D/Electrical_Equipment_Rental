@@ -1,0 +1,84 @@
+﻿@using System.Text.Json
+@model IEnumerable<Location>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Точки стоянки";
+    var locJson = JsonSerializer.Serialize(Model.Select(l => new { l.Id, l.Name, l.Address, l.Latitude, l.Longitude, l.IsActive }));
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="mb-0">📍 Точки стоянки</h4>
+    <a href="/admin/locations/create" class="btn btn-primary btn-sm">
+        <i class="bi bi-plus-lg me-1"></i>Добавить точку
+    </a>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-5">
+        <div class="card border-0 shadow-sm">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Название</th>
+                            <th>Техники</th>
+                            <th>Статус</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var loc in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="fw-semibold">@loc.Name</div>
+                                    <small class="text-muted">@loc.Address</small>
+                                </td>
+                                <td>@loc.Units.Count</td>
+                                <td>
+                                    @if (loc.IsActive)
+                                    {
+                                        <span class="badge bg-success">Активна</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">Скрыта</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a href="/admin/locations/edit/@loc.Id" class="btn btn-sm btn-outline-primary">Ред.</a>
+                                    <form asp-action="Delete" asp-route-id="@loc.Id" method="post" class="d-inline"
+                                          onsubmit="return confirm('Скрыть точку?')">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-sm btn-outline-danger">✕</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div id="adminMap" style="height:420px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.12);"></div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    var map = L.map('adminMap').setView([47.7631, 29.6383], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    var locations = @Html.Raw(locJson);
+    locations.forEach(function(loc) {
+        L.marker([loc.latitude, loc.longitude])
+            .addTo(map)
+            .bindPopup('<b>📍 ' + loc.name + '</b><br>' + loc.address +
+                (loc.isActive ? '' : '<br><em>Скрыта</em>'));
+    });
+</script>
+}
