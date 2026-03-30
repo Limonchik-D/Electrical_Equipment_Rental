@@ -188,3 +188,4 @@ C:\Код\vs\Практика\Electrical_Equipment_Rental\obj\Debug\net10.0\ref\
 C:\Код\vs\Практика\Electrical_Equipment_Rental\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Код\vs\Практика\Electrical_Equipment_Rental\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Код\vs\Практика\Electrical_Equipment_Rental\obj\Debug\net10.0\compressed\ffs8b8urv3-{0}-wn96n0umml-wn96n0umml.gz
+C:\Код\vs\Практика\Electrical_Equipment_Rental\obj\Debug\net10.0\Electrical_Equipment_Rental.sourcelink.json
